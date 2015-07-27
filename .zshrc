@@ -1,5 +1,15 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/npe/.oh-my-zsh
+
+if [[ `uname` == "Darwin" ]]; then
+	export ZSH=/Users/npe/.oh-my-zsh
+	export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/Users/npe/bin:/usr/sbin:/bin"
+elif [[ `expr substr $(uname -s) 1 5` == "Linux" ]]; then
+	export ZSH=/home/npe/.oh-my-zsh
+	export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/home/npe/bin:/usr/sbin:/bin"
+else
+	echo 'unknown os detected' 1>&2
+	exit 1
+fi
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,7 +59,6 @@ plugins=(sudo git hobbes go)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/home/npe/bin:/usr/sbin"
 export MANPATH="/usr/local/man:$MANPATH"
 export LEVIATHAN="$HOME/leviathan/"
 export PATH="$HOME/src/cmake-3.2.2/bin:$LEVIATHAN/shell:$LEVIATHAN/pisces:$PATH"
