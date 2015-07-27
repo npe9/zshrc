@@ -2,10 +2,10 @@
 
 if [[ `uname` == "Darwin" ]]; then
 	export ZSH=/Users/npe/.oh-my-zsh
-	export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/Users/npe/bin:/usr/sbin:/bin"
+	export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/Users/npe/bin:/usr/sbin:/bin:/sbin:/usr/sbin"
 elif [[ `expr substr $(uname -s) 1 5` == "Linux" ]]; then
 	export ZSH=/home/npe/.oh-my-zsh
-	export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/home/npe/bin:/usr/sbin:/bin"
+	export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/home/npe/bin:/usr/sbin:/bin:/sbin:/usr/sbin"
 else
 	echo 'unknown os detected' 1>&2
 	exit 1
