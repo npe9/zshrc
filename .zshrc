@@ -62,7 +62,7 @@ plugins=(sudo git hobbes go)
 export MANPATH="/usr/local/man:$MANPATH"
 export LEVIATHAN="$HOME/leviathan/"
 export PATH="$HOME/src/cmake-3.2.2/bin:$LEVIATHAN/shell:$LEVIATHAN/pisces:$PATH"
-
+export GOPATH="$HOME/go/"
 
 source $ZSH/oh-my-zsh.sh
 
